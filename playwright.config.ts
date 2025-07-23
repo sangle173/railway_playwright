@@ -9,7 +9,7 @@ export default defineConfig({
     baseURL: ENV.baseURL,    
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    viewport: { width: 1920, height: 1080 },
+    viewport: { width: 1280, height: 720 },
   },
   reporter: [['html', { open: 'on-failure' }]],
 });
