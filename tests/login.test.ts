@@ -1,11 +1,27 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../fixtures/baseTest';
 import { LoginPage } from '../pages/LoginPage';
+import loginUsersData from '../data/loginUsers.json';
+import { LoginUsers } from '../types/UserGroup';
 
-test('Login with valid credentials', async ({ page }) => {
+const loginUsers = loginUsersData as LoginUsers;
+
+test('Login with valid user', async ({ page }) => {
   const loginPage = new LoginPage(page);
-  await loginPage.goto();
-  await loginPage.login('bao.duong@agest.vn', 'test1234');
+  const user = loginUsers.valid[0];
 
-  // Expectation: Login success leads to the homepage
-  await expect(page).toHaveURL(/.*Page\/HomePage/);
+  await loginPage.goto();
+  await loginPage.login(user.username, user.password);
+
+  const welcomeText = await loginPage.getWelcomeText();
+  expect(welcomeText).toContain('Welcome');
+});
+
+loginUsers.invalid.forEach((user, i) => {
+  test(`Login with invalid user #${i + 1}`, async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.goto();
+    await loginPage.login(user.username, user.password);
+    const isVisible = await loginPage.isErrorVisible();
+    expect(isVisible).toBe(true);
+  });
 });

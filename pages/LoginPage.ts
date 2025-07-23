@@ -5,6 +5,9 @@ export class LoginPage {
   readonly usernameInput = '#username';
   readonly passwordInput = '#password';
   readonly loginButton = 'input[type="submit"]';
+  // locator for welcome message
+  readonly welcomeMessage = 'div#welcome-message';
+  readonly errorMessage = 'div#error-message';
 
   constructor(page: Page) {
     this.page = page;
@@ -18,5 +21,13 @@ export class LoginPage {
     await this.page.fill(this.usernameInput, username);
     await this.page.fill(this.passwordInput, password);
     await this.page.click(this.loginButton);
+  }
+
+  async getWelcomeText(): Promise<string> {
+    return await this.page.locator(this.welcomeMessage).textContent() || '';
+  }
+
+  async isErrorVisible(): Promise<boolean> {
+    return await this.page.locator(this.errorMessage).isVisible();
   }
 }

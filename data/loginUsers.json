@@ -1,0 +1,22 @@
+{
+  "valid": [
+    {
+      "username": "bao.duong@agest.vn",
+      "password": "test1234"
+    }
+  ],
+  "invalid": [
+    {
+      "username": "invalid@domain.com",
+      "password": "wrongpass"
+    },
+    {
+      "username": "",
+      "password": "test1234"
+    },
+    {
+      "username": "bao.duong@agest.vn",
+      "password": ""
+    }
+  ]
+}
