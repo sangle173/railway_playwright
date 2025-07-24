@@ -79,3 +79,59 @@ test('User can login', async ({ page, loginAsUser }) => {
 
 ## License
 MIT
+
+## Allure Report Integration
+
+This project supports Allure reporting for Playwright tests.
+
+### Local Usage
+
+1. Run your tests:
+   ```bash
+   npx playwright test
+   ```
+2. Generate the Allure HTML report:
+   ```bash
+   npx allure generate allure-results --clean -o allure-report
+   ```
+3. Open the Allure report in your browser:
+   ```bash
+   npx allure open allure-report
+   ```
+
+### GitHub Actions CI
+- Allure results and HTML reports are automatically generated and uploaded as artifacts on every push and pull request to `main`.
+- Download the `allure-report` artifact from the Actions run summary to view the report.
+
+### Prerequisites
+- Allure CLI must be installed locally to generate and view reports. Install it with:
+  ```bash
+  npm install -g allure-commandline --save-dev
+  ```
+
+## Allure CLI Local Installation (Recommended)
+
+If you see an error like `allure: not found` or permission errors when running Allure scripts, install Allure CLI as a dev dependency (not globally):
+
+```bash
+npm install --save-dev allure-commandline
+```
+
+Your `package.json` scripts are already set up to use the local binary via `npx`:
+
+```json
+"scripts": {
+  "test": "playwright test",
+  "allure:generate": "npx allure generate allure-results --clean -o allure-report",
+  "allure:open": "npx allure open allure-report"
+}
+```
+
+Now you can run:
+
+```bash
+npm run allure:generate
+npm run allure:open
+```
+
+No global install or sudo required!

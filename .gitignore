@@ -19,3 +19,7 @@ playwright-report/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Allure reports
+allure-report/
+allure-results/
