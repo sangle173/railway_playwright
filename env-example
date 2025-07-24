@@ -1,0 +1,7 @@
+# Example .env file for Railway Playwright project
+# Copy this file to .env and fill in your real values
+
+TEST_BASE_URL=http://www.saferailway.somee.com
+TEST_USERNAME=bao.duong@agest.vn
+TEST_PASSWORD=test1234
+# Add any other environment variables as needed
