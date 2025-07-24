@@ -1,7 +1,7 @@
 import { test, expect } from '../fixtures/baseTest';
 import { HomePage } from '../pages/HomePage';
 import { LoginPage } from '../pages/LoginPage';
-import loginUsersData from '../data/loginUsers.json';
+import { loginUsers } from '../utils/testData';
 import { LoginMessages } from '../utils/loginMessages';
 import { FrameworkMessages } from '../utils/errorMessages';
 
@@ -16,7 +16,7 @@ import { FrameworkMessages } from '../utils/errorMessages';
 test('TC03 - User cannot log into Railway with invalid password', async ({ page }) => {
   const homePage = new HomePage(page);
   const loginPage = new LoginPage(page);
-  const invalidUser = loginUsersData.invalid.find(u => u.username && u.password === 'wrongpass');
+  const invalidUser = loginUsers.invalid.find(u => u.username && u.password === 'wrongpass');
 
   // Step 1: Navigate to QA Railway Website
   await homePage.goto();

@@ -1,7 +1,7 @@
 import { test, expect } from '../fixtures/baseTest';
 import { HomePage } from '../pages/HomePage';
 import { LoginPage } from '../pages/LoginPage';
-import loginUsersData from '../data/loginUsers.json';
+import { loginUsers } from '../utils/testData';
 import { LoginMessages } from '../utils/loginMessages';
 import { FrameworkMessages } from '../utils/errorMessages';
 
@@ -17,9 +17,8 @@ import { FrameworkMessages } from '../utils/errorMessages';
 test('TC05 - System shows message when user enters wrong password several times', async ({ page }) => {
   const homePage = new HomePage(page);
   const loginPage = new LoginPage(page);
-  const validUser = loginUsersData.valid[0];
-  // Use a known invalid password from test data, or fallback to a hardcoded value
-  const invalidPassword = loginUsersData.invalid.find(u => u.username !== '' && u.password !== '')?.password || 'wrongpass';
+  const validUser = loginUsers.valid[0];
+  const invalidPassword = loginUsers.invalid.find(u => u.username !== '' && u.password !== '')?.password || 'wrongpass';
 
   // Step 1: Navigate to QA Railway Website
   await homePage.goto();

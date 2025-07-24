@@ -8,6 +8,10 @@ export class HomePage {
   readonly tabTimetable = 'a[href*="TrainTimeListPage"]';
   readonly tabLogout = 'a[href*="Logout"]';
   readonly welcomeMessage = 'div#welcome-message';
+  readonly myTicketTab = 'a[href*="ManageTicket"]';
+  readonly changePasswordTab = 'a[href*="ChangePassword"]';
+  readonly logoutTab = 'a[href*="Logout"]';
+  readonly registerTab = 'a[href*="Register"]';
 
   constructor(page: Page) {
     this.page = page;
@@ -35,5 +39,21 @@ export class HomePage {
 
   async clickLogoutTab() {
     await this.page.click(this.tabLogout);
+  }
+
+  async clickMyTicketTab() {
+    await this.page.click(this.myTicketTab);
+  }
+
+  async clickChangePasswordTab() {
+    await this.page.click(this.changePasswordTab);
+  }
+
+  async gotoRegister() {
+    await this.page.click(this.tabRegister);
+  }
+
+  async gotoLogin() {
+    await this.page.click(this.tabLogin);
   }
 }

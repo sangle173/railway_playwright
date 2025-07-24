@@ -1,13 +1,12 @@
 import { test, expect } from '../fixtures/baseTest';
 import { LoginPage } from '../pages/LoginPage';
-import loginUsersData from '../data/loginUsers.json';
-import { LoginUsers } from '../types/UserGroup';
+import { loginUsers } from '../utils/testData';
 
-const loginUsers = loginUsersData as LoginUsers;
+const loginUsersData = loginUsers;
 
 test('Login with valid user', async ({ page }) => {
   const loginPage = new LoginPage(page);
-  const user = loginUsers.valid[0];
+  const user = loginUsersData.valid[0];
 
   await loginPage.goto();
   await loginPage.login(user.username, user.password);
@@ -16,7 +15,7 @@ test('Login with valid user', async ({ page }) => {
   expect(welcomeText).toContain('Welcome');
 });
 
-loginUsers.invalid.forEach((user, i) => {
+loginUsersData.invalid.forEach((user, i) => {
   test(`Login with invalid user #${i + 1}`, async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();
