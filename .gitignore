@@ -10,9 +10,6 @@ test-results/
 playwright-report/
 *.log
 
-# Environment variables
-.env
-
 # VS Code settings
 .vscode/
 
