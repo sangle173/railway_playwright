@@ -1,0 +1,49 @@
+# Page snapshot
+
+```yaml
+- img "Safe Railway"
+- strong: Welcome guest!
+- list:
+  - listitem:
+    - link "Home":
+      - /url: ../
+  - listitem:
+    - link "FAQ":
+      - /url: /Page/FAQ.cshtml
+  - listitem:
+    - link "Contact":
+      - /url: /Page/Contact.cshtml
+  - listitem:
+    - link "Timetable":
+      - /url: ../Page/TrainTimeListPage.cshtml
+  - listitem:
+    - link "Ticket price":
+      - /url: /Page/TrainPriceListPage.cshtml
+  - listitem:
+    - link "Book ticket":
+      - /url: /Page/BookTicketPage.cshtml
+  - listitem:
+    - link "Register":
+      - /url: /Account/Register.cshtml
+  - listitem:
+    - link "Login":
+      - /url: /Account/Login.cshtml
+- group "Password Reset Instructions Form":
+  - text: Password Reset Instructions Form
+  - paragraph: We will send password reset instructions to the email address associated with your account.
+  - paragraph: This email address doesn't exist.
+  - list:
+    - listitem:
+      - text: Email Address
+      - textbox "Email Address": resetblank_1753339121712@testmail.com
+  - paragraph:
+    - button "Send Instructions"
+- separator
+- 'heading "©2017 Safe Railway. All rights reserved. Build version: 2.0" [level=5]'
+- link "Web hosting by Somee.com":
+  - /url: http://somee.com
+- link "Hosted Windows Virtual Server. 2.5GHz CPU, 2GB RAM, 60GB SSD. Try it now for $1!":
+  - /url: http://somee.com/VirtualServer.aspx
+- link "Web hosting by Somee.com":
+  - /url: http://somee.com
+```

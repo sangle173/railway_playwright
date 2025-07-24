@@ -1,0 +1,67 @@
+# Page snapshot
+
+```yaml
+- img "Safe Railway"
+- strong: Welcome guest!
+- list:
+  - listitem:
+    - link "Home":
+      - /url: ../
+  - listitem:
+    - link "FAQ":
+      - /url: /Page/FAQ.cshtml
+  - listitem:
+    - link "Contact":
+      - /url: /Page/Contact.cshtml
+  - listitem:
+    - link "Timetable":
+      - /url: ../Page/TrainTimeListPage.cshtml
+  - listitem:
+    - link "Ticket price":
+      - /url: /Page/TrainPriceListPage.cshtml
+  - listitem:
+    - link "Book ticket":
+      - /url: /Page/BookTicketPage.cshtml
+  - listitem:
+    - link "Register":
+      - /url: /Account/Register.cshtml
+  - listitem:
+    - link "Login":
+      - /url: /Account/Login.cshtml
+- heading "Create account" [level=1]
+- paragraph:
+  - text: Please fill the form below to create a new account or
+  - link "login":
+    - /url: /Account/Login.cshtml
+  - text: if you already have one. If you already created an account but haven't confirmed it yet, go
+  - link "here":
+    - /url: Confirm.cshtml
+  - text: and enter the confirmation code which can be found in your email. Please make sure your PID/Passport Number is correct. It can't be changed.
+- paragraph: There're errors in the form. Please correct the errors and try again.
+- group "Sign-up Form":
+  - text: Sign-up Form
+  - list:
+    - listitem:
+      - text: "Email (6 - 32 characters):"
+      - 'textbox "Email (6 - 32 characters): »Invalid email length"': testuser1753339117901@example.com
+      - text: »Invalid email length
+    - listitem:
+      - text: "Password (8 - 64 characters):"
+      - textbox "Password (8 - 64 characters):"
+    - listitem:
+      - text: "Confirm Password:"
+      - textbox "Confirm Password:"
+    - listitem:
+      - text: "PID/Passport number (8 - 20 characters):"
+      - textbox "PID/Passport number (8 - 20 characters):"
+  - paragraph:
+    - button "Register"
+- separator
+- 'heading "©2017 Safe Railway. All rights reserved. Build version: 2.0" [level=5]'
+- link "Web hosting by Somee.com":
+  - /url: http://somee.com
+- link "Hosted Windows Virtual Server. 2.5GHz CPU, 2GB RAM, 60GB SSD. Try it now for $1!":
+  - /url: http://somee.com/VirtualServer.aspx
+- link "Web hosting by Somee.com":
+  - /url: http://somee.com
+```
