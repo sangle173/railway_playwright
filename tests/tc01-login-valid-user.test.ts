@@ -2,7 +2,7 @@ import { test, expect } from '../fixtures/baseTest';
 import { HomePage } from '../pages/HomePage';
 import { LoginPage } from '../pages/LoginPage';
 import { ENV } from '../config/env';
-import loginUsersData from '../data/loginUsers.json';
+import { loginUsers } from '../utils/testData';
 
 // TC01: User can log into Railway with valid username and password
 // Steps:
@@ -15,7 +15,7 @@ import loginUsersData from '../data/loginUsers.json';
 test('TC01 - User can log into Railway with valid username and password', async ({ page }) => {
   const homePage = new HomePage(page);
   const loginPage = new LoginPage(page);
-  const validUser = loginUsersData.valid[0];
+  const validUser = loginUsers.valid[0];
 
   // Step 1: Navigate to QA Railway Website (handled by baseURL + HomePage.goto())
   await homePage.goto();
