@@ -3,7 +3,7 @@ import { HomePage } from '../pages/HomePage';
 import { TimetablePage } from '../pages/TimetablePage';
 import { BookingPage } from '../pages/BookingPage';
 
-test('TC15 - User can open Book Ticket page from Timetable', async ({ page, loginAsUser }) => {
+test('TC15 - Update ', async ({ page, loginAsUser }) => {
     const homePage = new HomePage(page);
     const timetablePage = new TimetablePage(page);
     const bookingPage = new BookingPage(page);
