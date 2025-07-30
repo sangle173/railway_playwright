@@ -26,10 +26,4 @@ test('TC15 - Update ', async ({ page, loginAsUser }) => {
 
     expect(departFrom?.trim()).toBe(routeFrom);
     expect(arriveAt?.trim()).toBe(routeTo);
-
-    expect(departFrom?.trim()).toBe(routeFrom);
-    expect(arriveAt?.trim()).toBe(routeTo);
-
-    expect(departFrom?.trim()).toBe(routeFrom);
-    expect(arriveAt?.trim()).toBe(routeTo);
 });
